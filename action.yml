@@ -73,3 +73,6 @@ runs:
             HOSTNAME="github-$(cat /etc/hostname)"
           fi
           sudo -E tailscale up --authkey ${TAILSCALE_AUTHKEY} --hostname=${HOSTNAME} --accept-routes ${ADDITIONAL_ARGS}
+          - name: Sync Tailscale ACLs
+  uses: tailscale/gitops-acl-action@v1
+
