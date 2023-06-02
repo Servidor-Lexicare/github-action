@@ -73,3 +73,6 @@ runs:
             HOSTNAME="github-$(cat /etc/hostname)"
           fi
           sudo -E tailscale up --authkey ${TAILSCALE_AUTHKEY} --hostname=${HOSTNAME} --accept-routes ${ADDITIONAL_ARGS}
+          - name: Connect Tailscale
+  uses: tailscale/github-action@v1
+
